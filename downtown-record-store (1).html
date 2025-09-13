@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Downtown Record and CD Emporium</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="Downtown Record and CD Emporium — Vinyl, CDs, and more." />
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="bg-white shadow">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-gray-200 rounded flex items-center justify-center font-bold">DR</div>
+        <div>
+          <h1 class="text-lg font-semibold">Downtown Record and CD Emporium</h1>
+          <p class="text-sm text-gray-500">Vinyl, CDs & music vibes since 2025</p>
+        </div>
+      </div>
+      <nav class="hidden md:flex gap-6 text-sm">
+        <a href="#shop" class="hover:underline">Shop</a>
+        <a href="#about" class="hover:underline">About</a>
+        <a href="#faq" class="hover:underline">FAQ</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+      </nav>
+      <a href="#shop" class="inline-block md:hidden px-3 py-2 bg-indigo-600 text-white rounded">Shop</a>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-12">
+    <section id="shop" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-extrabold">Vinyl & CDs for Music Lovers</h2>
+        <p class="mt-4 text-gray-600">Browse our collection of new releases, vintage vinyl, rare CDs, and music merch. Curated for collectors and casual listeners alike.</p>
+
+        <div class="mt-6 flex items-center gap-4">
+          <div class="text-3xl font-bold">From $9.99</div>
+          <div class="text-sm text-gray-500">New arrivals weekly · Local pickup available</div>
+        </div>
+
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="PAYMENT_LINK" class="inline-flex items-center justify-center px-5 py-3 bg-indigo-600 text-white rounded-md shadow hover:bg-indigo-700">Shop now</a>
+          <a href="#contact" class="inline-flex items-center justify-center px-5 py-3 border rounded-md">Contact us</a>
+        </div>
+
+        <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-gray-700">
+          <li>• Huge vinyl selection — classics & new releases</li>
+          <li>• Rare & collectible CDs</li>
+          <li>• Music merch & posters</li>
+          <li>• Buy · Sell · Trade</li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <img src="PLACEHOLDER_IMAGE_URL" alt="Vinyl display" class="w-full rounded shadow-md object-cover h-96">
+        <div class="grid grid-cols-3 gap-2">
+          <img src="PLACEHOLDER_IMAGE_URL" alt="thumb" class="w-full h-20 object-cover rounded">
+          <img src="PLACEHOLDER_IMAGE_URL" alt="thumb" class="w-full h-20 object-cover rounded">
+          <img src="PLACEHOLDER_IMAGE_URL" alt="thumb" class="w-full h-20 object-cover rounded">
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="mt-16 bg-white rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold">About Downtown Record and CD Emporium</h3>
+      <p class="mt-3 text-gray-700">Founded by music lovers, our shop is your go-to spot for vinyl, CDs, and everything in between. Whether you’re hunting for rare records, exploring new artists, or just browsing, we’ve got something for every ear.</p>
+
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <h4 class="font-medium">What we carry</h4>
+          <p class="text-sm text-gray-600">Vinyl (new & used), CDs, cassettes, band tees, turntable accessories, and posters.</p>
+        </div>
+        <div>
+          <h4 class="font-medium">Visit us</h4>
+          <p class="text-sm text-gray-600">123 Main Street, YourCity · Open Tue–Sat: 12pm – 7pm</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="mt-8">
+      <h3 class="text-xl font-semibold">FAQ</h3>
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-white rounded shadow p-4">
+          <h5 class="font-medium">Do you buy used records?</h5>
+          <p class="text-sm text-gray-600">Yes! Bring your collection to the shop. We offer cash or store credit depending on condition and demand.</p>
+        </div>
+        <div class="bg-white rounded shadow p-4">
+          <h5 class="font-medium">Can I order online?</h5>
+          <p class="text-sm text-gray-600">We’re adding new online ordering options soon. For now, contact us to reserve or inquire about specific titles.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="mt-8 bg-white rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold">Contact Us</h3>
+      <p class="mt-2 text-sm text-gray-600">Questions or looking for something specific? Email us at <a href="mailto:info@downtownrecords.com" class="text-indigo-600">info@downtownrecords.com</a> or use the form below.</p>
+
+      <form class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3" onsubmit="event.preventDefault(); alert('Form submitted — replace with real handler');">
+        <input required placeholder="Name" class="border rounded p-2" />
+        <input required type="email" placeholder="Email" class="border rounded p-2" />
+        <textarea required placeholder="Message" class="sm:col-span-2 border rounded p-2"></textarea>
+        <button class="sm:col-span-2 px-4 py-2 bg-indigo-600 text-white rounded">Send message</button>
+      </form>
+    </section>
+
+    <footer class="mt-12 text-center text-sm text-gray-500">© <span id="year"></span> Downtown Record and CD Emporium — All rights reserved.</footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
