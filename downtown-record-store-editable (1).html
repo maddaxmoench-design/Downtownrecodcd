@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Downtown Record and CD Emporium</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="Downtown Record and CD Emporium — Vinyl, CDs, and more." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<script>
+// ===== EDIT YOUR STORE SETTINGS HERE =====
+const siteSettings = {
+  name: "Downtown Record and CD Emporium",
+  tagline: "Vinyl, CDs & music vibes since 2025",
+  address: "123 Main Street, YourCity",
+  hours: "Tue–Sat: 12pm – 7pm",
+  email: "info@downtownrecords.com",
+  socials: {
+    instagram: "https://instagram.com",
+    facebook: "https://facebook.com",
+    twitter: "https://twitter.com"
+  },
+  products: [
+    { title: "Fleetwood Mac - Rumours (Vinyl)", price: "$24.99", img: "https://via.placeholder.com/200x200?text=Rumours", link: "#" },
+    { title: "Nirvana - Nevermind (CD)", price: "$12.99", img: "https://via.placeholder.com/200x200?text=Nevermind", link: "#" },
+    { title: "Taylor Swift - Midnights (Vinyl)", price: "$29.99", img: "https://via.placeholder.com/200x200?text=Midnights", link: "#" }
+  ]
+};
+</script>
+
+<header class="bg-white shadow">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-gray-200 rounded flex items-center justify-center font-bold">DR</div>
+      <div>
+        <h1 id="storeName" class="text-lg font-semibold"></h1>
+        <p id="storeTagline" class="text-sm text-gray-500"></p>
+      </div>
+    </div>
+    <nav class="hidden md:flex gap-6 text-sm">
+      <a href="#shop" class="hover:underline">Shop</a>
+      <a href="#about" class="hover:underline">About</a>
+      <a href="#faq" class="hover:underline">FAQ</a>
+      <a href="#contact" class="hover:underline">Contact</a>
+    </nav>
+    <a href="#shop" class="inline-block md:hidden px-3 py-2 bg-indigo-600 text-white rounded">Shop</a>
+  </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-6 py-12">
+  <section id="shop">
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Our Products</h2>
+    <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+  </section>
+
+  <section id="about" class="mt-16 bg-white rounded-lg shadow p-6">
+    <h3 class="text-xl font-semibold">About Us</h3>
+    <p class="mt-3 text-gray-700">Founded by music lovers, our shop is your go-to spot for vinyl, CDs, and everything in between.</p>
+    <p class="mt-2 text-sm text-gray-600"><strong>Visit us:</strong> <span id="storeAddress"></span> · <span id="storeHours"></span></p>
+  </section>
+
+  <section id="faq" class="mt-8">
+    <h3 class="text-xl font-semibold">FAQ</h3>
+    <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="bg-white rounded shadow p-4">
+        <h5 class="font-medium">Do you buy used records?</h5>
+        <p class="text-sm text-gray-600">Yes! Bring your collection to the shop. We offer cash or store credit depending on condition and demand.</p>
+      </div>
+      <div class="bg-white rounded shadow p-4">
+        <h5 class="font-medium">Can I order online?</h5>
+        <p class="text-sm text-gray-600">We’re adding new online ordering options soon. For now, contact us to reserve or inquire about specific titles.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="mt-8 bg-white rounded-lg shadow p-6">
+    <h3 class="text-xl font-semibold">Contact Us</h3>
+    <p class="mt-2 text-sm text-gray-600">Questions or looking for something specific? Email us at <a id="storeEmail" class="text-indigo-600"></a></p>
+
+    <form class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3" onsubmit="event.preventDefault(); alert('Form submitted — replace with real handler');">
+      <input required placeholder="Name" class="border rounded p-2" />
+      <input required type="email" placeholder="Email" class="border rounded p-2" />
+      <textarea required placeholder="Message" class="sm:col-span-2 border rounded p-2"></textarea>
+      <button class="sm:col-span-2 px-4 py-2 bg-indigo-600 text-white rounded">Send message</button>
+    </form>
+
+    <div class="mt-6 flex gap-4 text-xl">
+      <a id="instagramLink" target="_blank" class="text-pink-500 hover:text-pink-700"><i class="fab fa-instagram"></i></a>
+      <a id="facebookLink" target="_blank" class="text-blue-600 hover:text-blue-800"><i class="fab fa-facebook"></i></a>
+      <a id="twitterLink" target="_blank" class="text-sky-500 hover:text-sky-700"><i class="fab fa-twitter"></i></a>
+    </div>
+  </section>
+
+  <footer class="mt-12 text-center text-sm text-gray-500">© <span id="year"></span> <span id="footerName"></span> — All rights reserved.</footer>
+</main>
+
+<script>
+// Fill in store details dynamically
+document.getElementById("storeName").textContent = siteSettings.name;
+document.getElementById("storeTagline").textContent = siteSettings.tagline;
+document.getElementById("storeAddress").textContent = siteSettings.address;
+document.getElementById("storeHours").textContent = siteSettings.hours;
+document.getElementById("storeEmail").textContent = siteSettings.email;
+document.getElementById("storeEmail").href = "mailto:" + siteSettings.email;
+document.getElementById("footerName").textContent = siteSettings.name;
+
+// Social links
+document.getElementById("instagramLink").href = siteSettings.socials.instagram;
+document.getElementById("facebookLink").href = siteSettings.socials.facebook;
+document.getElementById("twitterLink").href = siteSettings.socials.twitter;
+
+// Product rendering
+const grid = document.getElementById("productGrid");
+siteSettings.products.forEach(p => {
+  const card = document.createElement("div");
+  card.className = "bg-white rounded shadow p-4 flex flex-col items-center text-center";
+  card.innerHTML = `
+    <a href="${p.link}" target="_blank"><img src="${p.img}" alt="${p.title}" class="w-40 h-40 object-cover rounded mb-3"></a>
+    <h4 class="font-medium">${p.title}</h4>
+    <p class="text-indigo-600 font-bold mt-1">${p.price}</p>
+    <a href="${p.link}" target="_blank" class="mt-3 px-3 py-1 bg-indigo-600 text-white text-sm rounded">Buy</a>
+  `;
+  grid.appendChild(card);
+});
+
+// Footer year
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
